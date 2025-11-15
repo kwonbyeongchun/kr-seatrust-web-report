@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-primary);
+  font-family: var(--font-family);
+}
+
+/* Slide Container */
+.slide-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-32) var(--spacing-24);
+}
+
+/* Slide Styles - Fixed 4:3 Aspect Ratio */
+.slide {
+  width: 100%;
+  max-width: 1024px;
+  aspect-ratio: 4 / 3;
+  max-height: calc(100vh - 240px);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-16);
+  border: 1px solid var(--color-border-primary);
+  box-shadow: var(--shadow-high);
+  padding: 2.5rem 3rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto;
+  transition: all var(--transition-regular);
+}
+
+/* Custom scrollbar */
+.slide::-webkit-scrollbar {
+  width: 6px;
+}
+
+.slide::-webkit-scrollbar-track {
+  background: var(--color-bg-tertiary);
+  border-radius: 3px;
+}
+
+.slide::-webkit-scrollbar-thumb {
+  background: var(--color-brand-primary);
+  border-radius: 3px;
+}
+
+.slide::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-accent);
+}
+
+.slide-number {
+  position: absolute;
+  top: var(--spacing-16);
+  right: var(--spacing-16);
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-tertiary);
+  padding: var(--spacing-6) var(--spacing-12);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-medium);
+  border: 1px solid var(--color-border-secondary);
+  letter-spacing: -0.01em;
+}
+
+.slide h1 {
+  font-size: 2.5rem;
+  color: var(--color-text-primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.1;
+  letter-spacing: -0.022em;
+}
+
+.slide h2 {
+  font-size: 1.75rem;
+  color: var(--color-text-primary);
+  margin-bottom: 1.25rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.1;
+  letter-spacing: -0.022em;
+}
+
+.slide h3 {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.75rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.slide p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  letter-spacing: -0.011em;
+  max-width: 100%;
+}
+
+.slide ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.slide li {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.5rem;
+  padding-left: var(--spacing-24);
+  position: relative;
+  line-height: 1.4;
+}
+
+.slide li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-brand-primary);
+  font-weight: bold;
+}
+
+/* Navigation */
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-24);
+  padding: var(--spacing-16);
+  background: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border-primary);
+}
+
+.nav-button {
+  padding: var(--spacing-12) var(--spacing-24);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-8);
+  font-size: var(--font-size-regular);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all var(--transition-quick);
+  font-family: var(--font-family);
+  letter-spacing: -0.011em;
+  min-width: 120px;
+}
+
+.nav-button:hover:not(:disabled) {
+  background: var(--color-brand-primary);
+  border-color: var(--color-brand-primary);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-low);
+}
+
+.nav-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.nav-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  color: var(--color-text-quaternary);
+}
+
+.nav-button:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 2px;
+}
+
+.slide-indicator {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-regular);
+  font-weight: var(--font-weight-medium);
+  padding: var(--spacing-8) var(--spacing-16);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-8);
+  min-width: 100px;
+  text-align: center;
+  letter-spacing: -0.011em;
+}
+
+/* Thumbnails */
+.thumbnails {
+  display: flex;
+  gap: var(--spacing-8);
+  padding: var(--spacing-12);
+  background: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border-primary);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.thumbnail {
+  width: 44px;
+  height: 44px;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-quick);
+  font-size: var(--font-size-small);
+  letter-spacing: -0.01em;
+}
+
+.thumbnail:hover {
+  background: var(--color-bg-quaternary);
+  border-color: var(--color-border-secondary);
+  color: var(--color-text-primary);
+  transform: scale(1.05);
+}
+
+.thumbnail.active {
+  background: var(--color-brand-primary);
+  border-color: var(--color-brand-primary);
+  color: white;
+  box-shadow: var(--shadow-low);
+}
+
+.thumbnail:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slide-container {
+    padding: var(--spacing-16);
+  }
+
+  .slide {
+    padding: 2rem 1.5rem;
+  }
+
+  .slide h1 {
+    font-size: 1.75rem;
+  }
+
+  .slide h2 {
+    font-size: 1.5rem;
+  }
+
+  .slide h3 {
+    font-size: 1rem;
+  }
+
+  .navigation {
+    flex-wrap: wrap;
+    gap: var(--spacing-12);
+    padding: var(--spacing-12);
+  }
+
+  .nav-button {
+    min-width: 100px;
+    padding: var(--spacing-8) var(--spacing-16);
+  }
+
+  .thumbnails {
+    gap: var(--spacing-6);
+    padding: var(--spacing-8);
+  }
+
+  .thumbnail {
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-size-micro);
+  }
+}
