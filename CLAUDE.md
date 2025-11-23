@@ -4,7 +4,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Vite + React 19 presentation slide application for SeaTrust MSAL project completion report. A keyboard and mouse-navigable slideshow with 12 slides covering project overview, technical implementation, architecture, and results.
+Vite + React 19 presentation slide application for SeaTrust MSAL project completion report. A keyboard and mouse-navigable slideshow with 20 slides covering technical implementation, architecture, and results.
+
+**Key Features**:
+- 16:9 aspect ratio slides
+- Viewport height-based responsive typography
+- Common slide component architecture
+- Keyboard, button, and thumbnail navigation
+- Dark theme with Linear design system
 
 ## Development Commands
 
@@ -28,10 +35,17 @@ npm run lint       # Run ESLint
   - Renders active slide component + navigation UI
   - Contains slides array registry
 
+- `src/components/Slide.jsx` - **Common slide wrapper component**
+  - Provides consistent slide structure and styling
+  - Accepts `number` prop for slide numbering
+  - Accepts `children` for slide content
+  - Accepts optional `className` for additional styling
+
 - `src/slides/` - Individual slide components
-  - Each slide is a functional component (e.g., `Slide1.jsx`)
-  - Standard structure: `<div className="slide">` wrapper with `slide-number` and content
-  - No props passed; fully self-contained presentation components
+  - Each slide uses the common `Slide` component wrapper
+  - Import pattern: `import Slide from '../components/Slide';`
+  - Usage: `<Slide number={N}>{content}</Slide>`
+  - Fully self-contained presentation components
 
 ### Navigation System
 
@@ -44,12 +58,14 @@ Three navigation methods implemented:
 
 1. Create slide component in `src/slides/SlideN.jsx`:
 ```jsx
+import Slide from '../components/Slide';
+
 const SlideN = () => {
   return (
-    <div className="slide">
-      <div className="slide-number">Slide N</div>
+    <Slide number={N}>
       <h1>Your Content</h1>
-    </div>
+      {/* Add your slide content here */}
+    </Slide>
   );
 };
 export default SlideN;
@@ -59,9 +75,26 @@ export default SlideN;
    - Import: `import SlideN from './slides/SlideN';`
    - Add to slides array: `const slides = [..., SlideN];`
 
-### Styling
+### Styling & Responsive Design
 
-- `src/App.css` - Slide container, navigation controls, thumbnails
+**Slide Aspect Ratio**: Fixed 16:9 ratio maintained across all viewport sizes
+
+**Responsive Font System**: All font sizes scale proportionally with viewport height using `clamp()` function
+- Ensures consistent readability across different screen sizes
+- Prevents text from being too small or too large
+- Typography scales automatically based on slide height
+
+Font size formula: `clamp(min, preferred-vh, max)`
+- `h1`: `clamp(1.5rem, 4.5vh, 3.5rem)` - Main titles
+- `h2`: `clamp(1.25rem, 3.5vh, 2.5rem)` - Subtitles
+- `h3`: `clamp(0.875rem, 2vh, 1.5rem)` - Section headings
+- `p`: `clamp(0.75rem, 1.6vh, 1.125rem)` - Body text
+- `li`: `clamp(0.7rem, 1.5vh, 1.05rem)` - List items
+- `.slide-number`: `clamp(0.625rem, 1.2vh, 0.875rem)` - Slide indicators
+- Navigation elements: `clamp(0.75rem, 1.4vh, 1rem)` - Buttons and controls
+
+**Styling Files**:
+- `src/App.css` - Slide container, navigation controls, thumbnails, responsive typography
 - `src/index.css` - Global styles using Linear design theme
 - `linear.json` - **Design theme source** (Linear.app design system)
 

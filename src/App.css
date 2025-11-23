@@ -49,16 +49,16 @@
   color: var(--color-text-tertiary);
   padding: var(--spacing-6) var(--spacing-12);
   border-radius: var(--radius-full);
-  font-size: 0.75rem;
+  font-size: clamp(0.625rem, 1.2vh, 0.875rem);
   font-weight: var(--font-weight-medium);
   border: 1px solid var(--color-border-secondary);
   letter-spacing: -0.01em;
 }
 
 .slide h1 {
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 4.5vh, 3.5rem);
   color: var(--color-text-primary);
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(0.75rem, 2vh, 1.5rem);
   text-align: center;
   font-weight: var(--font-weight-semibold);
   line-height: 1.1;
@@ -66,9 +66,9 @@
 }
 
 .slide h2 {
-  font-size: 1.75rem;
+  font-size: clamp(1.25rem, 3.5vh, 2.5rem);
   color: var(--color-text-primary);
-  margin-bottom: 1.25rem;
+  margin-bottom: clamp(0.5rem, 1.5vh, 1.25rem);
   text-align: center;
   font-weight: var(--font-weight-semibold);
   line-height: 1.1;
@@ -76,16 +76,16 @@
 }
 
 .slide h3 {
-  font-size: 1.125rem;
+  font-size: clamp(0.875rem, 2vh, 1.5rem);
   color: var(--color-text-secondary);
-  margin-bottom: 0.75rem;
+  margin-bottom: clamp(0.375rem, 1vh, 0.75rem);
   font-weight: var(--font-weight-semibold);
   line-height: 1.2;
   letter-spacing: -0.015em;
 }
 
 .slide p {
-  font-size: 0.9rem;
+  font-size: clamp(0.75rem, 1.6vh, 1.125rem);
   color: var(--color-text-secondary);
   line-height: 1.5;
   letter-spacing: -0.011em;
@@ -95,14 +95,14 @@
 .slide ul {
   list-style: none;
   padding: 0;
-  margin: 1rem 0;
+  margin: clamp(0.5rem, 1.5vh, 1rem) 0;
   width: 100%;
 }
 
 .slide li {
-  font-size: 0.875rem;
+  font-size: clamp(0.7rem, 1.5vh, 1.05rem);
   color: var(--color-text-secondary);
-  margin-bottom: 0.5rem;
+  margin-bottom: clamp(0.25rem, 0.75vh, 0.5rem);
   padding-left: var(--spacing-24);
   position: relative;
   line-height: 1.4;
@@ -199,7 +199,7 @@
   background: var(--color-bg-tertiary);
   border: 1px solid var(--color-border-primary);
   border-radius: var(--radius-8);
-  font-size: var(--font-size-regular);
+  font-size: clamp(0.75rem, 1.4vh, 1rem);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-primary);
   cursor: pointer;
@@ -234,7 +234,7 @@
 
 .slide-indicator {
   color: var(--color-text-primary);
-  font-size: var(--font-size-regular);
+  font-size: clamp(0.75rem, 1.4vh, 1rem);
   font-weight: var(--font-weight-medium);
   padding: var(--spacing-8) var(--spacing-16);
   background: var(--color-bg-tertiary);
@@ -269,7 +269,7 @@
   font-weight: var(--font-weight-medium);
   cursor: pointer;
   transition: all var(--transition-quick);
-  font-size: var(--font-size-small);
+  font-size: clamp(0.625rem, 1.2vh, 0.875rem);
   letter-spacing: -0.01em;
 }
 
