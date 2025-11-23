@@ -16,6 +16,7 @@ import Slide10 from './slides/Slide10';
 import Slide11 from './slides/Slide11';
 import Slide12 from './slides/Slide12';
 import Slide13 from './slides/Slide13';
+import Slide14 from './slides/Slide14';
 import Slide16 from './slides/Slide16';
 
 const slides = [
@@ -32,6 +33,7 @@ const slides = [
   Slide11,
   Slide12,
   Slide13,
+  Slide14,
   Slide16,
 ];
 

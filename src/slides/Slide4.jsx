@@ -16,7 +16,7 @@ const Slide4 = () => {
   ];
 
   const others = [
-    'i18next - 다국어 지원 (한/영)',
+    'i18next - 다국어 지원 (한/영/중)',
     'React Markdown - 마크다운 렌더링'
   ];
 

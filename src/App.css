@@ -85,7 +85,7 @@
 }
 
 .slide p {
-  font-size: clamp(0.75rem, 1.6vh, 1.125rem);
+  font-size: clamp(0.875rem, 1.8vh, 1.25rem);
   color: var(--color-text-secondary);
   line-height: 1.5;
   letter-spacing: -0.011em;
@@ -100,7 +100,7 @@
 }
 
 .slide li {
-  font-size: clamp(0.7rem, 1.5vh, 1.05rem);
+  font-size: clamp(0.825rem, 1.7vh, 1.175rem);
   color: var(--color-text-secondary);
   margin-bottom: clamp(0.25rem, 0.75vh, 0.5rem);
   padding-left: var(--spacing-24);
@@ -246,7 +246,7 @@
 }
 
 .info-box li {
-  font-size: clamp(0.7rem, 1.5vh, 1.05rem);
+  font-size: clamp(0.825rem, 1.7vh, 1.175rem);
   color: var(--color-text-secondary);
   margin-bottom: clamp(0.25rem, 0.6vh, 0.4rem);
   padding-left: var(--spacing-16);

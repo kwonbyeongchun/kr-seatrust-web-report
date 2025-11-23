@@ -19,7 +19,7 @@ const Slide13 = () => {
   const ragDocumentManagement = [
     '문서 업로드/삭제',
     '벡터 인덱스 관리',
-    '검색 테스트'
+    'AI 응답 테스트'
   ];
 
   return (
