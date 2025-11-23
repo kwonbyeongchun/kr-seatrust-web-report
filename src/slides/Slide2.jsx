@@ -20,8 +20,6 @@ const Slide2 = () => {
           <div>
             <p style={{ marginBottom: '0.5rem' }}><strong>10.</strong> 배포 / CI/CD</p>
             <p style={{ marginBottom: '0.5rem' }}><strong>11.</strong> 관리자 기능</p>
-            <p style={{ marginBottom: '0.5rem' }}><strong>12.</strong> 테스트 & 품질 보증</p>
-            <p style={{ marginBottom: '0.5rem' }}><strong>13.</strong> 성과 및 결과</p>
           </div>
         </div>
       </div>

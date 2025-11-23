@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Vite + React 19 presentation slide application for SeaTrust MSAL project completion report. A keyboard and mouse-navigable slideshow with 16 slides covering technical implementation, architecture, and results.
+Vite + React 19 presentation slide application for SeaTrust MSAL project completion report. A keyboard and mouse-navigable slideshow with 14 slides covering technical implementation, architecture, and results.
 
 **Key Features**:
 - 16:9 aspect ratio slides
