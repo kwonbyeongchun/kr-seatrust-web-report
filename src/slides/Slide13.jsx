@@ -1,35 +1,45 @@
 import Slide from '../components/Slide';
+import InfoBox from '../components/InfoBox';
 
 const Slide13 = () => {
+  const productManagement = [
+    '제품 등록/수정/삭제',
+    '이미지/파일 업로드',
+    '버전 관리',
+    '다운로드 통계'
+  ];
+
+  const downloadApproval = [
+    '다운로드 요청 목록',
+    '승인/거부 처리',
+    '자동 메일 발송',
+    '사용자 정보 조회'
+  ];
+
+  const ragDocumentManagement = [
+    '문서 업로드/삭제',
+    '벡터 인덱스 관리',
+    '검색 테스트'
+  ];
+
   return (
-    <Slide number={13}>
-      <h1>9. 메일 자동화 시스템</h1>
-      <div style={{ marginTop: '1.5rem', textAlign: 'left', width: '100%' }}>
-        <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>MS Graph Mail API</h3>
-        <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.25rem', fontSize: '0.85rem' }}>
-          <li>• Office 365 메일 계정 사용</li>
-          <li>• Device Flow 인증</li>
-          <li>• 토큰 자동 갱신</li>
-        </ul>
-        
-        <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>자동 메일 발송</h3>
-        <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.25rem', fontSize: '0.85rem' }}>
-          <li>• 다운로드 승인 알림</li>
-          <li>• Contact Form 접수 확인</li>
-          <li>• Quote 요청 알림</li>
-          <li>• 관리자 알림</li>
-        </ul>
-        
-        <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>메일 템플릿</h3>
-        <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.85rem' }}>
-          <li>• HTML 포맷 지원</li>
-          <li>• 다국어 템플릿 (한/영)</li>
-          <li>• 동적 변수 치환</li>
-        </ul>
+    <Slide number={11}>
+      <div className="split-layout">
+        <div className="split-left">
+          <h1>11. 관리자 기능</h1>
+
+          <div className="vertical-layout">
+            <InfoBox title="제품 관리" items={productManagement} />
+            <InfoBox title="다운로드 승인 관리" items={downloadApproval} />
+            <InfoBox title="RAG 문서 관리" items={ragDocumentManagement} />
+          </div>
+        </div>
+        <div className="split-right-with-padding">
+          <img src={`${import.meta.env.BASE_URL}manager.jpg`} alt="Manager Interface" className="split-image" />
+        </div>
       </div>
     </Slide>
   );
 };
-
 
 export default Slide13;

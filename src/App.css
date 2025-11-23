@@ -19,15 +19,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-32) var(--spacing-24);
+  padding: var(--spacing-16) var(--spacing-24);
+  min-height: 0;
 }
 
 /* Slide Styles - Fixed 16:9 Aspect Ratio */
 .slide {
-  width: calc(100vw - 48px);
   aspect-ratio: 16 / 9;
-  max-width: calc((100vh - 200px) * 16 / 9);
-  max-height: calc(100vh - 200px);
+  width: min(calc(100vw - 48px), calc((100vh - 200px) * 16 / 9));
+  height: auto;
   background: var(--color-bg-secondary);
   border: 1px solid var(--color-border-primary);
   box-shadow: var(--shadow-high);
@@ -123,6 +123,12 @@
   padding: 0;
 }
 
+.slide:has(.equal-height-layout) {
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 0;
+}
+
 .split-layout {
   display: flex;
   width: 100%;
@@ -152,6 +158,106 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Three Column Layout */
+.three-column-layout {
+  display: flex;
+  gap: clamp(0.75rem, 2vh, 1.5rem);
+  width: 100%;
+  margin-top: clamp(0.75rem, 2vh, 1.5rem);
+  flex: 1;
+  align-items: stretch;
+}
+
+/* Vertical Layout for InfoBoxes */
+.vertical-layout {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 1.5vh, 1rem);
+  width: 100%;
+  margin-top: clamp(0.75rem, 2vh, 1.5rem);
+  flex: 1;
+}
+
+/* Split Right with Padding for Images */
+.split-right-with-padding {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 3vh, 2rem);
+  overflow: hidden;
+}
+
+.split-right-with-padding .split-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Equal Height Images Layout */
+.equal-height-layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 0;
+  align-items: stretch;
+}
+
+.equal-height-layout .split-right-with-padding {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: clamp(1rem, 3vh, 2rem);
+  overflow: hidden;
+}
+
+.equal-height-layout .split-right-with-padding .split-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+}
+
+.info-box {
+  flex: 1;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-8);
+  padding: clamp(0.75rem, 2vh, 1.5rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.info-box h3 {
+  color: var(--color-brand-primary);
+  margin-bottom: clamp(0.5rem, 1.5vh, 1rem);
+  text-align: left;
+  font-size: clamp(0.875rem, 2vh, 1.5rem);
+}
+
+.info-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.info-box li {
+  font-size: clamp(0.7rem, 1.5vh, 1.05rem);
+  color: var(--color-text-secondary);
+  margin-bottom: clamp(0.25rem, 0.6vh, 0.4rem);
+  padding-left: var(--spacing-16);
+  line-height: 1.4;
+}
+
+.info-box li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-brand-primary);
 }
 
 /* Navigation Toggle Button */
@@ -295,23 +401,11 @@
 /* Responsive */
 @media (max-width: 768px) {
   .slide-container {
-    padding: var(--spacing-16);
+    padding: var(--spacing-8);
   }
 
   .slide {
-    padding: 2rem 1.5rem;
-  }
-
-  .slide h1 {
-    font-size: 1.75rem;
-  }
-
-  .slide h2 {
-    font-size: 1.5rem;
-  }
-
-  .slide h3 {
-    font-size: 1rem;
+    padding: 1.5rem 1rem;
   }
 
   .split-layout {

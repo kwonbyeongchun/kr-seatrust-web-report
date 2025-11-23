@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Vite + React 19 presentation slide application for SeaTrust MSAL project completion report. A keyboard and mouse-navigable slideshow with 20 slides covering technical implementation, architecture, and results.
+Vite + React 19 presentation slide application for SeaTrust MSAL project completion report. A keyboard and mouse-navigable slideshow with 16 slides covering technical implementation, architecture, and results.
 
 **Key Features**:
 - 16:9 aspect ratio slides
@@ -40,6 +40,18 @@ npm run lint       # Run ESLint
   - Accepts `number` prop for slide numbering
   - Accepts `children` for slide content
   - Accepts optional `className` for additional styling
+
+- `src/components/InfoBox.jsx` - **Reusable info box component**
+  - Used for structured information display (e.g., 3-column layouts)
+  - Accepts `title` prop for box heading (required)
+  - Accepts `items` prop for list content (optional array)
+  - If no items provided, displays empty placeholder
+  - Usage: `<InfoBox title="Title" items={['item1', 'item2']} />`
+
+- `src/components/SlideNavigation.jsx` - **Navigation controls component**
+  - Handles Previous/Next buttons and page indicator
+  - Accepts `currentSlide`, `totalSlides`, `onPrevious`, `onNext` props
+  - Auto-disables buttons at slide boundaries
 
 - `src/slides/` - Individual slide components
   - Each slide uses the common `Slide` component wrapper
@@ -92,9 +104,18 @@ Font size formula: `clamp(min, preferred-vh, max)`
 - `li`: `clamp(0.7rem, 1.5vh, 1.05rem)` - List items
 - `.slide-number`: `clamp(0.625rem, 1.2vh, 0.875rem)` - Slide indicators
 - Navigation elements: `clamp(0.75rem, 1.4vh, 1rem)` - Buttons and controls
+- **InfoBox component**: Uses default slide text sizes
+  - `.info-box h3`: `clamp(0.875rem, 2vh, 1.5rem)` - Same as h3
+  - `.info-box li`: `clamp(0.7rem, 1.5vh, 1.05rem)` - Same as li
+
+**Layout Components**:
+- `.three-column-layout` - Flex container for 3-column info box layouts
+  - Used with InfoBox components for structured information display
+  - Gap and spacing scale responsively with viewport height
+  - Example: Slide 3 uses this for System Architecture, Deployment, and Project Management
 
 **Styling Files**:
-- `src/App.css` - Slide container, navigation controls, thumbnails, responsive typography
+- `src/App.css` - Slide container, navigation controls, thumbnails, responsive typography, layout components
 - `src/index.css` - Global styles using Linear design theme
 - `linear.json` - **Design theme source** (Linear.app design system)
 

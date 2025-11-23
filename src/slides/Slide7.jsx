@@ -1,35 +1,48 @@
 import Slide from '../components/Slide';
+import InfoBox from '../components/InfoBox';
 
 const Slide7 = () => {
+  const softwareManagement = [
+    '소프트웨어 정보 등록',
+    '버전 관리',
+    '다국어 지원 (한/영/중)',
+    '카테고리 분류',
+    '상태 관리'
+  ];
+
+  const feedbackAndFAQ = [
+    '피드백 등록 및 관리',
+    'FAQ 등록 및 관리',
+    '사용자 질문 답변',
+    '피드백 분류 및 추적'
+  ];
+
+  const releaseAndEditor = [
+    '릴리즈 노트 관리',
+    <span key="markdown"><strong>Markdown 편집기</strong></span>,
+    '이미지 업로드 및 삽입',
+    '동영상 임베딩',
+    '실시간 미리보기'
+  ];
+
   return (
     <Slide number={7}>
-      <h1>4. 구현 - 백엔드 API</h1>
-      <div style={{ marginTop: '1.5rem', textAlign: 'left', width: '100%' }}>
-        <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>Routes (라우트)</h3>
-        <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.25rem', fontSize: '0.85rem' }}>
-          <li>• /api/users - 사용자 관리</li>
-          <li>• /api/software - 소프트웨어 CRUD</li>
-          <li>• /api/downloads - 다운로드 승인</li>
-          <li>• /api/contact - 문의 양식</li>
-          <li>• /api/knowledge - RAG 검색</li>
-          <li>• /api/auth/graph - MS Graph 인증</li>
-        </ul>
-        
-        <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>Services (서비스)</h3>
-        <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.25rem', fontSize: '0.85rem' }}>
-          <li>• database.service - MSSQL 연결</li>
-          <li>• s3.service - MinIO 파일 관리</li>
-          <li>• graph.service - MS Graph API</li>
-          <li>• mail.service - 메일 발송</li>
-          <li>• rag.service - AI 검색</li>
-        </ul>
-        
-        <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>Middleware</h3>
-        <p style={{ fontSize: '0.85rem' }}>• Helmet, CORS, Compression, Morgan</p>
+      <div className="split-layout">
+        <div className="split-left">
+          <h1 style={{ textAlign: 'center' }}>4. 소프트웨어 상세</h1>
+
+          <div className="vertical-layout">
+            <InfoBox title="소프트웨어 관리" items={softwareManagement} />
+            <InfoBox title="피드백 & FAQ" items={feedbackAndFAQ} />
+            <InfoBox title="릴리즈 노트 & 편집기" items={releaseAndEditor} />
+          </div>
+        </div>
+        <div className="split-right-with-padding">
+          <img src={`${import.meta.env.BASE_URL}software1.jpg`} alt="Software Details" className="split-image" />
+        </div>
       </div>
     </Slide>
   );
 };
-
 
 export default Slide7;
