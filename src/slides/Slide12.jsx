@@ -1,7 +1,8 @@
+import Slide from '../components/Slide';
+
 const Slide12 = () => {
   return (
-    <div className="slide">
-      <div className="slide-number">Slide 12</div>
+    <Slide number={12}>
       <h1>8. 파일 업로드 시스템 (MinIO)</h1>
       <div style={{ marginTop: '1.5rem', textAlign: 'left', width: '100%' }}>
         <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>MinIO S3 연동</h3>
@@ -27,8 +28,9 @@ const Slide12 = () => {
           <li>• 문서: PDF, DOCX, TXT, MD</li>
         </ul>
       </div>
-    </div>
+    </Slide>
   );
 };
+
 
 export default Slide12;

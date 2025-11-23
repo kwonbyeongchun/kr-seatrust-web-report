@@ -1,7 +1,8 @@
+import Slide from '../components/Slide';
+
 const Slide15 = () => {
   return (
-    <div className="slide">
-      <div className="slide-number">Slide 15</div>
+    <Slide number={15}>
       <h1>11. Docker & 배포 구성</h1>
       <div style={{ marginTop: '1.5rem', textAlign: 'left', width: '100%' }}>
         <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>Docker Compose 서비스</h3>
@@ -27,8 +28,9 @@ const Slide15 = () => {
           <li>• 모니터링: 로그 집계</li>
         </ul>
       </div>
-    </div>
+    </Slide>
   );
 };
+
 
 export default Slide15;

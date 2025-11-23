@@ -1,7 +1,8 @@
+import Slide from '../components/Slide';
+
 const Slide5 = () => {
   return (
-    <div className="slide">
-      <div className="slide-number">Slide 5</div>
+    <Slide number={5}>
       <h1>3. 기술 스택 - 백엔드</h1>
       <div style={{ marginTop: '1.5rem', textAlign: 'left', width: '100%' }}>
         <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>코어 프레임워크</h3>
@@ -26,8 +27,9 @@ const Slide5 = () => {
           <li>• @azure/identity - MSAL 인증</li>
         </ul>
       </div>
-    </div>
+    </Slide>
   );
 };
+
 
 export default Slide5;

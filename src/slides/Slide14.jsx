@@ -1,7 +1,8 @@
+import Slide from '../components/Slide';
+
 const Slide14 = () => {
   return (
-    <div className="slide">
-      <div className="slide-number">Slide 14</div>
+    <Slide number={14}>
       <h1>10. 스케줄러 시스템</h1>
       <div style={{ marginTop: '1.5rem', textAlign: 'left', width: '100%' }}>
         <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>node-cron 기반</h3>
@@ -25,8 +26,9 @@ const Slide14 = () => {
           <li>• 실패 시 다음 스케줄 계속 실행</li>
         </ul>
       </div>
-    </div>
+    </Slide>
   );
 };
+
 
 export default Slide14;

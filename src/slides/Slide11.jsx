@@ -1,7 +1,8 @@
+import Slide from '../components/Slide';
+
 const Slide11 = () => {
   return (
-    <div className="slide">
-      <div className="slide-number">Slide 11</div>
+    <Slide number={11}>
       <h1>7. MSAL 인증 시스템</h1>
       <div style={{ marginTop: '1.5rem', textAlign: 'left', width: '100%' }}>
         <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>Device Flow 인증</h3>
@@ -27,8 +28,9 @@ const Slide11 = () => {
           <li>• 서버 재시작 시 자동 복구</li>
         </ul>
       </div>
-    </div>
+    </Slide>
   );
 };
+
 
 export default Slide11;

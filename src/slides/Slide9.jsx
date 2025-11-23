@@ -1,7 +1,8 @@
+import Slide from '../components/Slide';
+
 const Slide9 = () => {
   return (
-    <div className="slide">
-      <div className="slide-number">Slide 9</div>
+    <Slide number={9}>
       <h1>6. RAG 시스템 - 아키텍처</h1>
       <div style={{ marginTop: '1.5rem', textAlign: 'left', width: '100%' }}>
         <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>시스템 구성</h3>
@@ -26,8 +27,9 @@ const Slide9 = () => {
         <p style={{ fontSize: '0.85rem' }}>• 코사인 유사도 기반 벡터 검색</p>
         <p style={{ fontSize: '0.85rem' }}>• Top-K 결과 반환 (K=3~5)</p>
       </div>
-    </div>
+    </Slide>
   );
 };
+
 
 export default Slide9;

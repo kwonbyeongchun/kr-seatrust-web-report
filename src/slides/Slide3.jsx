@@ -1,7 +1,8 @@
+import Slide from '../components/Slide';
+
 const Slide3 = () => {
   return (
-    <div className="slide">
-      <div className="slide-number">Slide 3</div>
+    <Slide number={3}>
       <h1>2. 시스템 전체 구성도</h1>
       <div style={{ marginTop: '1.5rem', textAlign: 'left', width: '100%' }}>
         <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>시스템 아키텍처</h3>
@@ -22,8 +23,9 @@ const Slide3 = () => {
           <li>• GHCR 컨테이너 레지스트리</li>
         </ul>
       </div>
-    </div>
+    </Slide>
   );
 };
+
 
 export default Slide3;

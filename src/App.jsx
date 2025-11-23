@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect } from 'react';
 import './App.css';
+import SlideNavigation from './components/SlideNavigation';
 
 // Import all slides
 import Slide1 from './slides/Slide1';
@@ -48,6 +49,7 @@ const slides = [
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isNavVisible, setIsNavVisible] = useState(true);
   const CurrentSlideComponent = slides[currentSlide];
 
   useEffect(() => {
@@ -75,47 +77,49 @@ function App() {
     setCurrentSlide(index);
   };
 
+  const toggleNavigation = () => {
+    setIsNavVisible((prev) => !prev);
+  };
+
   return (
     <div className="app">
       <div className="slide-container">
         <CurrentSlideComponent />
       </div>
 
+      {/* Navigation Toggle Button */}
+      <button
+        className="nav-toggle"
+        onClick={toggleNavigation}
+        title={isNavVisible ? "Hide navigation" : "Show navigation"}
+      >
+        {isNavVisible ? '▼ Hide Navigation' : '▲ Show Navigation'}
+      </button>
+
       {/* Navigation Controls */}
-      <div className="navigation">
-        <button
-          onClick={prevSlide}
-          disabled={currentSlide === 0}
-          className="nav-button"
-        >
-          ← Previous
-        </button>
+      {isNavVisible && (
+        <>
+          <SlideNavigation
+            currentSlide={currentSlide}
+            totalSlides={slides.length}
+            onPrevious={prevSlide}
+            onNext={nextSlide}
+          />
 
-        <div className="slide-indicator">
-          {currentSlide + 1} / {slides.length}
-        </div>
-
-        <button
-          onClick={nextSlide}
-          disabled={currentSlide === slides.length - 1}
-          className="nav-button"
-        >
-          Next →
-        </button>
-      </div>
-
-      {/* Slide Thumbnails */}
-      <div className="thumbnails">
-        {slides.map((_, index) => (
-          <div
-            key={index}
-            className={`thumbnail ${currentSlide === index ? 'active' : ''}`}
-            onClick={() => goToSlide(index)}
-          >
-            {index + 1}
+          {/* Slide Thumbnails */}
+          <div className="thumbnails">
+            {slides.map((_, index) => (
+              <div
+                key={index}
+                className={`thumbnail ${currentSlide === index ? 'active' : ''}`}
+                onClick={() => goToSlide(index)}
+              >
+                {index + 1}
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
     </div>
   );
 }

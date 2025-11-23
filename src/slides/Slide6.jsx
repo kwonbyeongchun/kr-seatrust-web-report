@@ -1,7 +1,8 @@
+import Slide from '../components/Slide';
+
 const Slide6 = () => {
   return (
-    <div className="slide">
-      <div className="slide-number">Slide 6</div>
+    <Slide number={6}>
       <h1>4. 구현 - 프론트엔드 (Atomic Design)</h1>
       <div style={{ marginTop: '1.5rem', textAlign: 'left', width: '100%' }}>
         <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>Atoms (기본 요소)</h3>
@@ -26,8 +27,9 @@ const Slide6 = () => {
         <p style={{ fontSize: '0.85rem' }}>• 일관된 색상, 폰트, 간격 시스템</p>
         <p style={{ fontSize: '0.85rem' }}>• TailwindCSS 커스텀 테마</p>
       </div>
-    </div>
+    </Slide>
   );
 };
+
 
 export default Slide6;

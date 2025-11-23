@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(if [ -d \"src\" ])",
+      "Bash(then ls -la src/)",
+      "Bash(fi)",
+      "Bash(if [ -d \"public\" ])",
+      "Bash(then ls -la public/)",
+      "Bash(for file in Slide*.jsx)",
+      "Bash(do)",
+      "Bash(if ! node -c \"$file\")",
+      "Bash(then)",
+      "Bash(echo:*)",
+      "Bash(done)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

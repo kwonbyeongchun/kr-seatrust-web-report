@@ -1,7 +1,8 @@
+import Slide from '../components/Slide';
+
 const Slide13 = () => {
   return (
-    <div className="slide">
-      <div className="slide-number">Slide 13</div>
+    <Slide number={13}>
       <h1>9. 메일 자동화 시스템</h1>
       <div style={{ marginTop: '1.5rem', textAlign: 'left', width: '100%' }}>
         <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>MS Graph Mail API</h3>
@@ -26,8 +27,9 @@ const Slide13 = () => {
           <li>• 동적 변수 치환</li>
         </ul>
       </div>
-    </div>
+    </Slide>
   );
 };
+
 
 export default Slide13;

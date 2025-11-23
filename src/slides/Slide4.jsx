@@ -1,7 +1,8 @@
+import Slide from '../components/Slide';
+
 const Slide4 = () => {
   return (
-    <div className="slide">
-      <div className="slide-number">Slide 4</div>
+    <Slide number={4}>
       <h1>3. 기술 스택 - 프론트엔드</h1>
       <div style={{ marginTop: '1.5rem', textAlign: 'left', width: '100%' }}>
         <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>코어 라이브러리</h3>
@@ -25,8 +26,9 @@ const Slide4 = () => {
           <li>• React Markdown - 마크다운 렌더링</li>
         </ul>
       </div>
-    </div>
+    </Slide>
   );
 };
+
 
 export default Slide4;

@@ -1,7 +1,8 @@
+import Slide from '../components/Slide';
+
 const Slide2 = () => {
   return (
-    <div className="slide">
-      <div className="slide-number">Slide 2</div>
+    <Slide number={2}>
       <h1>목차</h1>
       <div style={{ marginTop: '1.5rem', textAlign: 'left', width: '100%', fontSize: '0.85rem' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
@@ -29,7 +30,7 @@ const Slide2 = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Slide>
   );
 };
 

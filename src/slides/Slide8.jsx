@@ -1,7 +1,8 @@
+import Slide from '../components/Slide';
+
 const Slide8 = () => {
   return (
-    <div className="slide">
-      <div className="slide-number">Slide 8</div>
+    <Slide number={8}>
       <h1>5. 데이터베이스 설계</h1>
       <div style={{ marginTop: '1.5rem', textAlign: 'left', width: '100%' }}>
         <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>주요 테이블</h3>
@@ -26,8 +27,9 @@ const Slide8 = () => {
           <li>• email, status 필드 인덱스</li>
         </ul>
       </div>
-    </div>
+    </Slide>
   );
 };
+
 
 export default Slide8;

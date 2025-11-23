@@ -1,7 +1,8 @@
+import Slide from '../components/Slide';
+
 const Slide16 = () => {
   return (
-    <div className="slide">
-      <div className="slide-number">Slide 16</div>
+    <Slide number={16}>
       <h1>12. CI/CD 파이프라인</h1>
       <div style={{ marginTop: '1.5rem', textAlign: 'left', width: '100%' }}>
         <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>GitHub Actions 워크플로우</h3>
@@ -27,8 +28,9 @@ const Slide16 = () => {
           <li>• 무중단 배포</li>
         </ul>
       </div>
-    </div>
+    </Slide>
   );
 };
+
 
 export default Slide16;

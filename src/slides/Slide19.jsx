@@ -1,7 +1,8 @@
+import Slide from '../components/Slide';
+
 const Slide19 = () => {
   return (
-    <div className="slide">
-      <div className="slide-number">Slide 19</div>
+    <Slide number={19}>
       <h1>15. 성과 및 결과</h1>
       <div style={{ marginTop: '1.5rem', textAlign: 'left', width: '100%' }}>
         <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>기술적 성과</h3>
@@ -27,8 +28,9 @@ const Slide19 = () => {
           <li>• 메일 발송 자동화</li>
         </ul>
       </div>
-    </div>
+    </Slide>
   );
 };
+
 
 export default Slide19;

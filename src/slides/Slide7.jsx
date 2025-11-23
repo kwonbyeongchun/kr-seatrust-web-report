@@ -1,7 +1,8 @@
+import Slide from '../components/Slide';
+
 const Slide7 = () => {
   return (
-    <div className="slide">
-      <div className="slide-number">Slide 7</div>
+    <Slide number={7}>
       <h1>4. 구현 - 백엔드 API</h1>
       <div style={{ marginTop: '1.5rem', textAlign: 'left', width: '100%' }}>
         <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>Routes (라우트)</h3>
@@ -26,8 +27,9 @@ const Slide7 = () => {
         <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>Middleware</h3>
         <p style={{ fontSize: '0.85rem' }}>• Helmet, CORS, Compression, Morgan</p>
       </div>
-    </div>
+    </Slide>
   );
 };
+
 
 export default Slide7;

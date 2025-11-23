@@ -1,7 +1,8 @@
+import Slide from '../components/Slide';
+
 const Slide20 = () => {
   return (
-    <div className="slide">
-      <div className="slide-number">Slide 20</div>
+    <Slide number={20}>
       <h1>감사합니다</h1>
       <div style={{ marginTop: '3rem', textAlign: 'center', width: '100%' }}>
         <h2 style={{
@@ -21,7 +22,7 @@ const Slide20 = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Slide>
   );
 };
 

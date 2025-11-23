@@ -1,7 +1,8 @@
+import Slide from '../components/Slide';
+
 const Slide18 = () => {
   return (
-    <div className="slide">
-      <div className="slide-number">Slide 18</div>
+    <Slide number={18}>
       <h1>14. 테스트 & 품질 보증</h1>
       <div style={{ marginTop: '1.5rem', textAlign: 'left', width: '100%' }}>
         <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>테스트 전략</h3>
@@ -27,8 +28,9 @@ const Slide18 = () => {
           <li>• XSS 방어 검증</li>
         </ul>
       </div>
-    </div>
+    </Slide>
   );
 };
+
 
 export default Slide18;

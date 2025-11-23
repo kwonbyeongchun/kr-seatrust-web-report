@@ -1,7 +1,8 @@
+import Slide from '../components/Slide';
+
 const Slide10 = () => {
   return (
-    <div className="slide">
-      <div className="slide-number">Slide 10</div>
+    <Slide number={10}>
       <h1>6. RAG 시스템 - 구현 세부사항</h1>
       <div style={{ marginTop: '1.5rem', textAlign: 'left', width: '100%' }}>
         <h3 style={{ color: 'var(--color-brand-primary)', marginBottom: '0.75rem' }}>문서 처리 파이프라인</h3>
@@ -28,8 +29,9 @@ const Slide10 = () => {
           <li>• 벡터 인덱스 관리</li>
         </ul>
       </div>
-    </div>
+    </Slide>
   );
 };
+
 
 export default Slide10;
